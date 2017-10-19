@@ -12,6 +12,14 @@
         <servlet-name>InserTabla</servlet-name>
         <servlet-class>Controladores.InserTabla</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServiciosContexto</servlet-name>
+        <servlet-class>Controladores.InsertarContexto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>unidadAstracta</servlet-name>
+        <servlet-class>Controladores.InsertarunidadAstracta</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InsertarEsquema</servlet-name>
         <url-pattern>/InsertarEsquema</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>InserTabla</servlet-name>
         <url-pattern>/InserTabla</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServiciosContexto</servlet-name>
+        <url-pattern>/ServiciosContexto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>unidadAstracta</servlet-name>
+        <url-pattern>/unidadAstracta</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
