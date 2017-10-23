@@ -53,7 +53,7 @@ public class ServiciosTabla {
             while (rs.next()) {
                 Tabla t = new Tabla();
 
-                t.setId_tabla(rs.getInt("id_Esquema"));
+                t.setId_tabla(rs.getInt("id_Tabla"));
                 t.setNombre_Tabla(rs.getString("Nombre_tabla"));
                 t.setId_esquema(rs.getInt("id_esquema"));
 

@@ -27,16 +27,17 @@ public class ServiciosContexto {
     public void agregarContexto(Contexto con) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("insert into Esquemas(id,link,idM) values (?, ?,? )");
+                    .prepareStatement("insert into contextoNavegacion(id,link,idM) values (?, ?, ? )");
             // Parameters start with 1
             preparedStatement.setInt(1, con.getId());
-            preparedStatement.setInt(2, con.getIdM());
-            preparedStatement.setString(3, con.getLink());
+            preparedStatement.setString(2, con.getLink());
+            preparedStatement.setInt(3, con.getIdM());
             
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("agrego algo");
         }
     }
      public ArrayList<Contexto> listarCo() {

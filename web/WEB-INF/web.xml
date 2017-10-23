@@ -13,12 +13,16 @@
         <servlet-class>Controladores.InserTabla</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServiciosContexto</servlet-name>
-        <servlet-class>Controladores.InsertarContexto</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>unidadAstracta</servlet-name>
         <servlet-class>Controladores.InsertarunidadAstracta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertarContextos</servlet-name>
+        <servlet-class>Controladores.InsertarContextos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertarUnidad</servlet-name>
+        <servlet-class>Controladores.InsertarUnidad</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>InsertarEsquema</servlet-name>
@@ -33,16 +37,18 @@
         <url-pattern>/InserTabla</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServiciosContexto</servlet-name>
-        <url-pattern>/ServiciosContexto</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>unidadAstracta</servlet-name>
         <url-pattern>/unidadAstracta</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertarContextos</servlet-name>
+        <url-pattern>/InsertarContextos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertarUnidad</servlet-name>
+        <url-pattern>/InsertarUnidad</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>

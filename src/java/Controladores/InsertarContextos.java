@@ -6,9 +6,7 @@
 package Controladores;
 
 import DAO.ServiciosContexto;
-import DAO.ServiciosEsquema;
 import VO.Contexto;
-import VO.Esquema;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -19,17 +17,24 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author LabingXEON
+ * @author fernando stiven
  */
-public class InsertarContexto extends HttpServlet {
+public class InsertarContextos extends HttpServlet {
 
-  
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
         }
     }
 
@@ -60,23 +65,23 @@ public class InsertarContexto extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-    
-    boolean resultado = false;
+
+        boolean resultado = false;
         String respuesta = null;
         String id = request.getParameter("id");
         String link = request.getParameter("link");
-        String idm=request.getParameter("idM");
+        String idm = request.getParameter("idM");
 
         int id_c = Integer.parseInt(id);
-        int id_m=Integer.parseInt(idm);
+        int id_m = Integer.parseInt(idm);
 
-        if (id.trim().length() > 0 && link.trim().length() > 0 && idm.trim().length()>0) {
+        if (id.trim().length() > 0 && link.trim().length() > 0 && idm.trim().length() > 0) {
             resultado = true;
             Contexto con = new Contexto(id_c, link, id_m);
             ServiciosContexto serC = new ServiciosContexto();
             serC.agregarContexto(con);
 
-            RequestDispatcher rq = request.getRequestDispatcher("");
+            RequestDispatcher rq = request.getRequestDispatcher("InsertarContexto.jsp");
 
             if (resultado == true) {
                 request.setAttribute("resultado", true);
@@ -90,9 +95,15 @@ public class InsertarContexto extends HttpServlet {
         }
 
     }
-    
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }

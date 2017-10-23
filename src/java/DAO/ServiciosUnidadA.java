@@ -35,6 +35,7 @@ public class ServiciosUnidadA {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println("agrego algo");
     }
      public ArrayList<UnidadAbstracta> listarUni() {
         ArrayList<UnidadAbstracta> unidad = new ArrayList<UnidadAbstracta>();
