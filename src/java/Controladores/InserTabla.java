@@ -32,8 +32,7 @@ public class InserTabla extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            RequestDispatcher rq = request.getRequestDispatcher("inserTabla.jsp");
-
+   
         }
     }
 
@@ -41,7 +40,7 @@ public class InserTabla extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        RequestDispatcher rq = request.getRequestDispatcher("inserTabla.jsp");
+        RequestDispatcher rq = request.getRequestDispatcher("InserTabla");
         ServiciosEsquema ser = new ServiciosEsquema();
         ArrayList<Esquema> lis = null;
         lis = (ArrayList<Esquema>) ser.listarEs();
@@ -62,12 +61,12 @@ public class InserTabla extends HttpServlet {
 
         ServiciosEsquema ser = new ServiciosEsquema();
 
-        String nombre = request.getParameter("name");
         String id = request.getParameter("idTabla");
+        String nombre = request.getParameter("name");
         String nombreES = request.getParameter("nombreEsquema");
 
         int id_tabla = Integer.parseInt(id);
-
+        int id_Esquema = Integer.parseInt(nombreES);
         if (id.trim().length() > 0 && nombre.trim().length() > 0 && nombreES.trim().length() > 0) {
 
             resultado = true;
@@ -80,7 +79,7 @@ public class InserTabla extends HttpServlet {
             Tabla t = new Tabla(id_tabla, es.getId_esquema(), nombre);
             st.agragarTabla(t);
 
-            RequestDispatcher rq = request.getRequestDispatcher("InserTabla.jsp");
+            RequestDispatcher rq = request.getRequestDispatcher("InsertarTabla.jsp");
 
             if (resultado == true) {
                 request.setAttribute("resultado", true);

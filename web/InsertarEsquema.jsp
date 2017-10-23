@@ -33,7 +33,7 @@
                     <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="contact_submitted" value="submit" /></p>
                 </div>
                 <h2><a href="InsertarEsquema.jsp"> Ver los guardados</a></h2>
-                <h2><a href="inserTabla"> insertar tabla en esquema</a></h2>
+                <h2><a href="InsertarTabla.jsp"> insertar tabla en esquema</a></h2>
                 <h2><a href="InsertarContexto.jsp"> insertar contexto en esquema</a></h2>
                 ><a href="InsertarUnidad.jsp"> insertar unidad en esquema</a></h2>
                 

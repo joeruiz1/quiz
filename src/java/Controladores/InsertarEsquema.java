@@ -33,7 +33,7 @@ public class InsertarEsquema extends HttpServlet {
         processRequest(request, response);
 
         boolean resultado = false;
-        String respuesta = null;
+//        String respuesta = null;
         String id = request.getParameter("id");
         String nombre = request.getParameter("nombre");
 
